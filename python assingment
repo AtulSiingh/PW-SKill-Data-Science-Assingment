@@ -1,0 +1,121 @@
+python assingment 1:-
+ANswer1:-The keyword used to create a function in Python is def
+ example:-
+def get_odd_numbers():
+    odd_numbers = []
+    for num in range(1, 26):
+        if num % 2 != 0:
+            odd_numbers.append(num)
+    return odd_numbers
+
+# Call the function and print the result
+print(get_odd_numbers())
+
+Answer 2:-
+The *args parameter is used to pass a variable number of non-keyword arguments to a function. It allows you to pass any number of arguments to the function without explicitly defining them in the function definition. The *args parameter collects all the positional arguments into a tuple.
+example
+
+def my_function(*args):
+    for arg in args:
+        print(arg)
+
+
+my_function(1, 2, 3, 4)
+
+The **kwargs parameter is used to pass a variable number of keyword arguments to a function. It allows you to pass any number of keyword arguments to the function without explicitly defining them in the function definition. The **kwargs parameter collects all the keyword arguments into a dictionary.
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+
+my_function(name='John', age=25, city='New York')
+
+Answer 3:-
+ In Python, an iterator is an object that allows you to traverse a container or sequence of elements. It provides a way to access the elements of a container one by one without the need to know the internal details of how the container is implemented. An iterator must implement two methods: __iter__() and __next__().
+
+The __iter__() method is used to initialize the iterator object. It returns the iterator object itself.
+
+The __next__() method is used to retrieve the next element from the iterator. It returns the next element and advances the iterator's internal pointer.
+
+my_list = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+my_iter = iter(my_list)
+
+for _ in range(5):
+    element = next(my_iter)
+    print(element)
+Answer 4:-
+In Python, a generator function is a special type of function that returns an iterator. It uses the yield keyword instead of return to provide a series of values one at a time.The yield keyword is used in a generator function to yield a value to the caller and temporarily suspend the function's execution. The function can be resumed later from where it left off, retaining its internal state.
+def even_numbers():
+    num = 0
+    while True:
+        yield num
+        num += 2
+
+# Create a generator object
+generator = even_numbers()
+
+# Use the next() function to retrieve the next value
+print(next(generator))  # 0
+print(next(generator))  # 2
+print(next(generator))  # 4
+
+Answer 5:-
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def prime_generator():
+    num = 2
+    count = 0
+    while count < 20:
+        if is_prime(num):
+            yield num
+            count += 1
+        num += 1
+
+# Create a generator object
+generator = prime_generator()
+
+# Use the next() function to retrieve the next prime number
+for _ in range(20):
+    print(next(generator))
+
+Annswer 6:-
+a, b = 0, 1
+count = 0
+
+while count < 10:
+    print(a)
+    a, b = b, a + b
+    count += 1
+
+
+Answer 7:-
+string = 'pwskills'
+result = [char for char in string]
+
+print(result)
+
+Answer 8-
+number = int(input("Enter a number: "))
+temp = number
+reverse = 0
+
+while temp > 0:
+    digit = temp % 10
+    reverse = reverse * 10 + digit
+    temp = temp // 10
+
+if number == reverse:
+    print(number, "is a palindrome")
+else:
+    print(number, "is not a palindrome")
+
+Answer 9:-
+odd_numbers = [num for num in range(1, 101) if num % 2 != 0]
+print(odd_numbers)
+
